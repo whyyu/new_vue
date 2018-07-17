@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+</head>
+<body>
+
+<div id="app">
+    <zdy v-for="mess in message" :info="mess"></zdy>
+</div>
+<script src="./vue.js"></script>
+<script>
+    // // 子组件传值，需要在子组件中定义一个props;['传值名称']，在组件内容中用双花括号使用出来{{传值名称}}，在父组件里用指令：加传值名称=‘传值内容’
+    // // 动态传值，把自定义属性传值，需要把自定义属性写在父组件：传值名称=‘自定义属性名称’可以使用双向数据绑定来传值
+    // new Vue({
+    //     el:'#app',
+    //     data:{
+    //         message:123456
+    //     },
+    //     components:{
+    //         'zdy':{
+    //             props:['aa'],
+    //             template:"<p>{{aa}}</p>"
+    //         }
+    //     }
+    // })
+
+
+
+    //循环把自定义属性传给子组件，把循环输出的值传给自组建，在父组件中;传值名称='循环输出的值'，在自组建中props：【传值名称】，在内容中调用传值名称.循环体
+
+    new Vue({
+        el:'#app',
+        data:{
+            message:[
+                {aa:1111},
+                {aa:2222},
+                {aa:3333}
+            ]
+        },
+        components:{
+            'zdy':{
+                props:['info'],
+                template:"<p>{{info.aa}}</p>"
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

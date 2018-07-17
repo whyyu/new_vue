@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+    <style>
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <!--在直接使用自定义属性的值的时候可以直接使用指令=“”的方式，并且需要v-bind来定义html属性指令来加载-->
+    <p v-bind:id='one'>123456</p>
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            one:'aa',
+            two:'bb'
+        }
+    })
+</script>
+</body>
+</html>

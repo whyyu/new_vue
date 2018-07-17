@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+</head>
+<body>
+
+<div id="app">
+    <p>{{message}}</p>
+    <p>{{age}}</p>
+    <p>{{detail()}}</p>
+    <!--函数可以直接在双花括号中调用输出-->
+</div>
+<p style="clear: both">123</p>
+<script src="./vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            message:'12646ssss',
+            age:18
+        },
+        methods:{
+            detail:function () {
+                alert(111)
+            }
+        }
+    })
+</script>
+</body>
+</html>

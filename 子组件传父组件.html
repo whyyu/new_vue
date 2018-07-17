@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+</head>
+<body>
+
+<div id="app">
+    <p>{{total}}</p>
+    <button-count @hah="js"></button-count>
+    <button-count @hah="js"></button-count>
+    <button-count @hah="js"></button-count>
+</div>
+<script src="./vue.js"></script>
+<script>
+    // 子组件中调用自己的方法，在方法中触发在父组件的方法，在父方法中调用
+    new Vue({
+        el:'#app',
+        data:{
+            total:0
+        },
+        methods:{
+          js:function () {
+              this.total+=1;
+          }
+        },
+        components:{
+            "button-count":{
+                template:'<button @click="clickcount">{{count}}</button>',
+                data:function () {
+                    return {
+                        count:0
+                    }
+                },
+                methods:{
+                    clickcount:function () {
+                        this.count+=1;
+                        this.$emit('hah')
+                    }
+                }
+            }
+
+        }
+    })
+</script>
+</body>
+</html>

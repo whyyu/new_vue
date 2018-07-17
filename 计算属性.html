@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+</head>
+<body>
+
+<div id="app">
+    <!--<p>{{message.split('').reverse().join('')}}</p>-->
+    <p>{{message}}</p>
+    <p> {{remessage}}</p>
+    <p>{{jsmessage()}}</p>
+</div>
+<script src="./vue.js"></script>
+<script>
+    // {{}}中可以直接使用js语句
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            message:'asd'
+        },
+        // 计算属性放在computed中，属性名称自定义，是一个函数，根据返回值来定义属性的值
+        //一般情况computed使用的是getter（get方法）属性来获取改变的值，我们可以使用setter（set方法）来设置值,设置值的方式是改变原来想要修改的自定义属性
+        computed:{
+            remessage:{
+                get:function () {
+                    return 123424
+                },
+                set:function (value) {
+                    return value.split('').reverse().join('')
+                }
+            }
+        },
+        methods:{
+            jsmessage:function () {
+                return this.message.split('').reverse().join('');
+            }
+        }
+    })
+    vm.remessage='qwer'
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+    <style>
+        .aa{
+            background: #f00;
+        }
+        .cc{
+            color: #0f0;
+        }
+        .a{
+            background: #00ff00;
+            color: #ccc;
+        }
+        .b{
+            background: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <!--在需要判断类是否是正的时候需要用花括号来加载，需要多个类的时候用【】并且在数组中可以使用三位运算符，并且需要v-bind来定义html属性指令来加载也可以使用一个对象来控制整体的类-->
+    <p v-bind:class="[one,two]">123</p>
+    <p :class="lei">9876544</p>
+    <input type="text" v-model="checkbox" >
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            one:'cc',
+            checkbox:false,
+            two:'aa',
+            lei:{
+                a:true,
+                b:false
+            }
+        },
+        // methods:{
+        //     clickme:function (checkbox) {
+        //         console.log(checkbox);
+        //     }
+        // },
+        watch:{
+            checkbox:function (value) {
+                console.log(value);
+            }
+        }
+    })
+</script>
+</body>
+</html>

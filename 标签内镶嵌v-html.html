@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+</head>
+<body>
+
+<div id="app">
+    <p>{{message}}</p>
+    <!--如果尝试在v-html绑定的结构中再添加其他内容（无论是文本还是HTML），都会被忽略,下面的1236456会被忽略
+    并且直接输出数据绑定会按照字符串输出-->
+    <p v-html="age">{{message}}</p>
+    {{age}}
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            message:'12646ssss',
+            age:'<h1>hahaha</h1>'
+        },
+    })
+</script>
+</body>
+</html>

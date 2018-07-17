@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+</head>
+<body>
+
+<div id="app">
+    <zdy></zdy>
+</div>
+<script src="./vue.js"></script>
+<script>
+    // 使用Vue.component来定义全局组件，（‘组件名称’，{
+    //     template：'组件具体内容'
+    // }）
+
+    // Vue.component('zdy',{
+    //     template:'<p>nihao</p> '
+    // });
+
+
+    // 定义局部组件，在内部使用components：{
+    //     ‘组名名称’：组件内容
+    // }
+    // var child = {
+    //     template:'<p>你好啊</p>'
+    // }
+    // 也可以在内部使用components:{
+    //     'zdy':{
+    //         template:'<p>951357</p>'
+    //     }
+    // }
+    new Vue({
+        el:'#app',
+        data:{
+            message:12646
+        },
+        components:{
+            'zdy':{
+                template:'<p>9513ttttttttttttt57</p>'
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+    <style>
+        .one{
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+<!--在input中更改自定义属性的值时，dom结构跟随改变，可以在dom中使用v-model=’自定义属性 v-model会把自定义属性的值付给标签，也会修改自定义变量‘-->
+<div id="app">
+    <p>{{one}}</p>
+    <input type="text" v-model="one">
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            one:11223,
+            two:'aaaaaaa'
+        }
+    })
+</script>
+</body>
+</html>

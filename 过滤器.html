@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+    <style>
+        .one{
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <p>
+        {{ one | two(1,a)}}
+    </p>
+</div>
+<script src="vue.js"></script>
+<script>
+    // 过滤器，在标签显示的时候真囧姐用{{  值 | 过滤器名称 }}，在绑定到id等属性时使用’值 | 过滤器名称‘，之后再filters中写方法,并且过滤器可以串联，第一个做为第二个的参数，第二个返回的结果作为第三个的参数，并且过滤器可以带有参数{{ one | two（a,b） | three}}
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            one:'aa',
+            a:2
+        },
+        filters:{
+            two:function (value, d , f) {
+                if(d == f){
+                    return d
+                }else{
+                    return f
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

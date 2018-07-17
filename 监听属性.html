@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+</head>
+<body>
+
+<div id="app">
+    千米：<input type="number" v-model="qianmi">
+    米：<input type="number" v-model="mi">
+</div>
+<script src="./vue.js"></script>
+<script>
+    // watch可以监听自定义属性，属性名称下直接写方法，可以在input中接受值，用vm.$watch来监听想要知道之前修改的值和修改后的值
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            qianmi:'',
+            mi:''
+        },
+        watch:{
+            qianmi:function (value) {
+                this.qianmi=value;
+                this.mi=value*1000;
+            },
+            mi:function (value) {
+                this.qianmi=value/1000;
+                this.mi=value;
+            }
+        }
+    })
+    vm.$watch('mi',function (a,b) {
+        console.log("新的数据："+ a + "老的数据："+b);
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+</head>
+<body>
+
+<div id="app">
+    <!--<p v-for="site in sites">{{site.value}}</p>-->
+    <!--<p v-for="info in infos">{{info}}</p>-->
+    <p v-for="(value,key,index) in infos">{{key}}:{{value}}:{{index}}</p>
+</div>
+<script src="./vue.js"></script>
+<script>
+    // v-for控制循环，循环自定义属性下的数组，输出数组下的值，也可以直接输出自定义属性下面的值,循环可以带有参数，输出value，key，index，也可以自定义循环数字
+    new Vue({
+        el:'#app',
+        data:{
+            sites:[
+                {value : 1},
+                {value : 2},
+                {value : 3}
+            ],
+            infos:{
+                age:18,
+                name:'lisi'
+            }
+        }
+    })
+</script>
+</body>
+</html>

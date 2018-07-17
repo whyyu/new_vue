@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>learn</title>
+</head>
+<body>
+
+<div id="app">
+    <p>{{message}}</p>
+</div>
+<script src="./vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            ys:{
+                listStyle:'none',
+                float:'left',
+                marginRight:10+'px',
+                background:'#ccc'
+            },
+            kas:[
+                {ka:'选项卡1'},
+                {ka:'选项卡2'},
+                {ka:'选项卡3'}
+            ]
+        },
+        methods:{
+            neirong:function (index) {
+                console.log(index);
+            }
+        },
+        components:{
+            'child':{
+                props:['info'],
+                template:'<li @click="gaibian">{{info.ka}}</li>',
+                methods:{
+                    gaibian:function(){
+                        this.$emit('gb')
+                    }
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
